@@ -1,0 +1,30 @@
+{
+  "name": "me-commerce",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "foreman": "^2.0.0",
+    "marked": "^0.3.12",
+    "mongodb": "^3.0.2",
+    "mongoose": "^5.0.4",
+    "node-sass": "^4.6.1",
+    "nodemon": "^1.14.12",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-scripts": "1.0.17",
+    "reactstrap": "^5.0.0-beta",
+    "scss-compile": "^0.1.7"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "start-dev": "nf start -p 3000",
+    "build": "react-scripts build",
+    "test": "npm run scss-compile",
+    "eject": "react-scripts eject",
+    "scss-compile": "node-sass src/scss -o src/css",
+    "watch": "npm run scss-compile"
+  }
+}

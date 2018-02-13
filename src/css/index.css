@@ -1,0 +1,42 @@
+body .row {
+  margin: 0; }
+
+/* Override Bootstrap */
+div[class^="col-xs-"],
+div[class^="col-sm-"],
+div[class^="col-md-"],
+div[class^="col-lg-"] {
+  padding-left: 0;
+  padding-right: 0; }
+
+/* Navbar Styles */
+.navbar {
+  background-color: #ac67bf; }
+
+/* Footer Styles */
+.footer {
+  padding: 15px 0;
+  color: #fff;
+  background-color: #ac67bf; }
+
+/* Wishlist styles */
+.wishlist-container {
+  width: 100%; }
+  .wishlist-container .wishlist {
+    padding: 25px 0; }
+  .wishlist-container .card {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    font-size: 24px; }
+  .wishlist-container .card:hover {
+    cursor: pointer; }
+  .wishlist-container .wishlist-card {
+    line-height: 200px; }
+    .wishlist-container .wishlist-card .fa-4 {
+      font-size: 7em; }
+  .wishlist-container .new-wishlist-card {
+    border: 0; }
+  .wishlist-container .wishlist-card-column {
+    padding: 10px;
+    text-align: center; }
