@@ -4,34 +4,31 @@ import axios from 'axios';
 
 export default class Wishlist extends React.Component{
 	constructor(props){
+		console.log("constructor");
 		super(props);
 		this.state = {
 			wishlistItems: []
 		};
 		this.url = 'http://localhost:3001/meComm/userItems';
-		this.sampleData = {
-		    "_id": {
-		        "$oid": "5a824c86734d1d1523da28bc"
-		    },
-		    "items": {
-		        "item_1": "Xbox One X",
-		        "item_2": "Necklace"
-		    }
-		}
-		
-		var keys = Object.keys(this.sampleData.items);
-		for (var i = 0; i < keys.length; i++) {
-			this.state.wishlistItems.push(<WishlistCard key={keys[i]} cardItem={this.sampleData.items[keys[i]]} />);
-		}
-		this.state.wishlistItems.push(<NewCard key="newCard" onClick={() => this.addWishlistItem()} />);
-		
-
-		//this.loadWishlistItemsFromServer();
+		this.loadWishlistItemsFromServer = this.loadWishlistItemsFromServer.bind(this);		
+	}
+	componentDidMount() {
+		console.log("component mounting");
+		this.loadWishlistItemsFromServer();
+		setInterval(this.loadCommentsFromServer, 2000);
 	}
 	loadWishlistItemsFromServer() {
+		console.log("loading wishlist items");
  		axios.get(this.url)
  			.then(res => {
- 				console.log(res);
+ 				var withlistItemObjects = [];
+ 				var keys = Object.keys(res.data[0].items);
+				console.log(keys);	
+				for (var i = 0; i < keys.length; i++) {
+					withlistItemObjects.push(<WishlistCard key={keys[i]} cardItem={res.data[0].items[keys[i]]} />);
+				}
+				withlistItemObjects.push(<NewCard key="newCard" onClick={() => this.addWishlistItem()} />);
+ 				this.setState({ wishlistItems: withlistItemObjects});
  			})
  	}
 	addWishlistItem(){
@@ -39,9 +36,10 @@ export default class Wishlist extends React.Component{
 		newWishlist.push(this.state.wishlistItems.slice());
 		this.setState({
 			wishlistItems: newWishlist
-		})
+		});
 	}
 	render(){
+		console.log("render");
 		return (
 			<div className="row wishlist">
 				{this.state.wishlistItems}
