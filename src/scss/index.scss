@@ -1,6 +1,10 @@
-$me-commerce-purple: #ac67bf;
+$me-commerce-brand: #9ce6ff;
+$me-commerce-brand-dark: #6ed9ff;
 $me-commerce-white: #fff;
 
+body{
+	background-color: #f2f2f2;
+}
 body .row{
 	margin: 0;
 }
@@ -14,13 +18,17 @@ div[class^="col-lg-"]{
 }
 /* Navbar Styles */
 .navbar{
-	background-color: $me-commerce-purple;
+	background-color: $me-commerce-brand;
 }
 /* Footer Styles */
 .footer{
 	padding: 15px 0;
 	color: $me-commerce-white;
-	background-color: $me-commerce-purple;
+	background-color: $me-commerce-brand;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
 }
 /* Wishlist styles */
 .wishlist-container{
@@ -47,10 +55,42 @@ div[class^="col-lg-"]{
 
 	.new-wishlist-card{
 		border: 0;
+		color: $me-commerce-brand;
+
+		.btn-primary{
+			color: $me-commerce-brand;
+			border: 0;
+			background-color: transparent;
+			cursor: pointer;
+		}
+		
+		.btn-primary:active{
+			background-color: transparent;
+			color: $me-commerce-brand-dark;
+			border: 0;
+			box-shadow: none;
+		}
 	}
 
 	.wishlist-card-column{
 		padding: 10px;
 		text-align: center;
 	}
+}
+.fade.in {
+  opacity: 1;
+}
+.modal.in .modal-dialog {
+  -webkit-transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  transform: translate(0, 0);
+}
+
+.modal-backdrop .fade .in {
+  opacity: 0.5 !important;
+}
+
+
+.modal-backdrop.fade {
+    opacity: 0.5 !important;
 }
