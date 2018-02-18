@@ -21,7 +21,7 @@ export default class Wishlist extends React.Component{
  		axios.get(apiEndpoint)
  			.then(res => {
  				var withlistItemObjects = [];
-				for (var i = 0; i < res.data.length; i++) {
+				for (var i = res.data.length - 1; i >= 0; i--) {
 					withlistItemObjects.push(<WishlistCard key={res.data[i]._id} cardItem={res.data[i].name} />);
 				}
 				withlistItemObjects.push(<NewCard key="newCard" actionFunction={this.loadWishlistItemsFromServer} onClick={() => this.addWishlistItem()} />);
@@ -60,6 +60,7 @@ class NewCard extends React.Component{
     	});
   	}
   	submitNewItem(){
+  		console.log("submit");
   		var newItemFromInput = document.getElementById('newItemInput').value;
   		axios.post(apiEndpoint, {'name': newItemFromInput})
   		.then(
@@ -77,10 +78,10 @@ class NewCard extends React.Component{
 
 	        		<Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
 	          			<ModalHeader toggle={this.toggle}>Add an item to your wishlist!</ModalHeader>
-	          			<form>
+	          			<form onSubmit={this.submitNewItem}>
 	          				<div className="row form-row">
 	          					<div className="col-md-12">
-	          						<input type='text' placeholder='Enter your new wishlist item...' id="newItemInput" autocomplete="off"/>
+	          						<input autoFocus="autofocus" type='text' placeholder='Enter your new wishlist item...' id="newItemInput" autoComplete="off"/>
 	          					</div>
 	          				</div>	          				
 	          			</form>
