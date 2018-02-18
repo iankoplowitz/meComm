@@ -56,7 +56,6 @@ router.route('/userItems')
     .post(function(req, res) {
         var wishlistCard = new WishlistItem();
         wishlistCard.name = req.body.name;
-        console.log(wishlistCard.name)
         wishlistCard.save(function(err){
             if(err)
                 return res.send(err);

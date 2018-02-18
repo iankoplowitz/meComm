@@ -70,11 +70,52 @@ div[class^="col-lg-"]{
 			border: 0;
 			box-shadow: none;
 		}
+
+
 	}
 
 	.wishlist-card-column{
 		padding: 10px;
 		text-align: center;
+	}
+}
+.modal{
+	.button{
+		color: #fff;
+		background-color: $me-commerce-brand;
+		padding: 10px 15px;
+		border-radius: 3px;
+		cursor: pointer;
+		width: fit-content;
+
+	}
+	.button:hover{
+		background-color: $me-commerce-brand-dark;
+	}
+	.form-row{
+		padding: 15px;
+
+		input{
+			width: 100%;
+			border: 0;
+			border-bottom: 2px solid $me-commerce-brand;
+			height: 60px;
+			padding: 15px 0;
+			font-size: 24px;
+		}
+		input:focus{
+			outline: none;
+			border-bottom: 2px solid $me-commerce-brand-dark;
+		}
+	}
+	.form-submit-container{
+		text-align: center;
+		padding: 15px;
+		padding-top: 0;
+
+		.button{
+			margin: 0 auto;
+		}
 	}
 }
 .fade.in {

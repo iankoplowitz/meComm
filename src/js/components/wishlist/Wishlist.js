@@ -1,7 +1,8 @@
 import React from 'react';
 import WishlistCard from './WishlistCard.js';
+import Button from '../utils/Button.js';
 import axios from 'axios';
-import { Col, Button, Modal, ModalHeader, ModalBody, ModalFooter, Form, FormGroup, Label, Input } from 'reactstrap';
+import { Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 var apiEndpoint = 'http://192.168.1.183:3001/meComm/userItems';
 
 export default class Wishlist extends React.Component{
@@ -59,7 +60,6 @@ class NewCard extends React.Component{
     	});
   	}
   	submitNewItem(){
-  		//console.log(document.getElementById('newItemInput').value);
   		var newItemFromInput = document.getElementById('newItemInput').value;
   		axios.post(apiEndpoint, {'name': newItemFromInput})
   		.then(
@@ -78,12 +78,17 @@ class NewCard extends React.Component{
 	        		<Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
 	          			<ModalHeader toggle={this.toggle}>Add an item to your wishlist!</ModalHeader>
 	          			<form>
-	          				<input
-				                type='text'
-				                placeholder='Update name...'
-				                id="newItemInput"/>
+	          				<div className="row form-row">
+	          					<div className="col-md-12">
+	          						<input type='text' placeholder='Enter your new wishlist item...' id="newItemInput" autocomplete="off"/>
+	          					</div>
+	          				</div>	          				
 	          			</form>
-	          			<button type="button" onClick={this.submitNewItem}>Click Me!</button>
+	          			<div className="row">
+	          				<div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 form-submit-container">
+	          					<Button text="Submit" callback={this.submitNewItem} />	          			
+	          				</div>
+	          			</div>
 	        		</Modal>
 				</div>
 			</div>
