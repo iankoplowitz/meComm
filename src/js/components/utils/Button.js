@@ -4,12 +4,13 @@ export default class Button extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
-			buttonText: this.props.text
+			buttonText: this.props.text,
+			styles: 'button ' + this.props.className
 		};
 	}
 	render(){
 		return (
-			<div className="button" onClick={this.props.callback}>
+			<div className={this.state.styles} onClick={this.props.callback}>
   				{this.state.buttonText}
   			</div>
 		);

@@ -69,10 +69,14 @@ div[class^="col-lg-"] {
 .modal .button:hover {
   background-color: #6ed9ff; }
 
-.modal .btn.btn-alert {
+.modal .btn-alert {
   background-color: #dc3545;
   border-color: #dc3545;
   color: #fff; }
+
+.modal .btn-alert:hover {
+  background-color: #dc4545;
+  border-color: #dc4545; }
 
 .modal .form-row {
   padding: 15px; }

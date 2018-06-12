@@ -39,7 +39,7 @@ export default class WishlistCard extends React.Component{
 					<Modal isOpen={this.state.modal} toggle={this.toggle} className={this.props.className}>
 		      			<ModalHeader toggle={this.toggle}>Item: {this.state.cardItem}</ModalHeader>
 		      			<ModalFooter>
-		      				<Button text="Delete" color="alert" callback={this.removeWishlistItem}/>
+		      				<Button text="Delete" className="btn-alert" callback={this.removeWishlistItem}/>
 		      			</ModalFooter>
 		    		</Modal>
 				</div>
