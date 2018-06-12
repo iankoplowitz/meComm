@@ -3,7 +3,7 @@ import WishlistCard from './WishlistCard.js';
 import Button from '../utils/Button.js';
 import axios from 'axios';
 import { Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
-var apiEndpoint = 'http://192.168.1.183:3001/meComm/userItems';
+var apiEndpoint = 'http://192.168.1.183:3001/meComm';
 
 export default class Wishlist extends React.Component{
 	constructor(props){
@@ -18,11 +18,11 @@ export default class Wishlist extends React.Component{
 		setInterval(this.loadCommentsFromServer, 2000);
 	}
 	loadWishlistItemsFromServer() {
- 		axios.get(apiEndpoint)
+ 		axios.get(apiEndpoint + '/userItems')
  			.then(res => {
  				var withlistItemObjects = [];
 				for (var i = res.data.length - 1; i >= 0; i--) {
-					withlistItemObjects.push(<WishlistCard key={res.data[i]._id} cardItem={res.data[i].name} />);
+					withlistItemObjects.push(<WishlistCard key={res.data[i]._id} cardKey={res.data[i]._id} cardItem={res.data[i].name} />);
 				}
 				withlistItemObjects.push(<NewCard key="newCard" actionFunction={this.loadWishlistItemsFromServer} onClick={() => this.addWishlistItem()} />);
  				this.setState({ wishlistItems: withlistItemObjects});
@@ -62,7 +62,7 @@ class NewCard extends React.Component{
   	submitNewItem(){
   		console.log("submit");
   		var newItemFromInput = document.getElementById('newItemInput').value;
-  		axios.post(apiEndpoint, {'name': newItemFromInput})
+  		axios.post(apiEndpoint + '/addUserItem', {'name': newItemFromInput})
   		.then(
   			window.location.reload()
   		)

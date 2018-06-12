@@ -52,7 +52,9 @@ router.route('/userItems')
             //responds with a json object of our database comments.
             res.json(items)
         });
-    })
+    });
+
+router.route('/addUserItem')
     .post(function(req, res) {
         var wishlistCard = new WishlistItem();
         wishlistCard.name = req.body.name;
@@ -60,6 +62,16 @@ router.route('/userItems')
             if(err)
                 return res.send(err);
             res.json({ message: 'Item added!' });
+        })
+    });
+
+router.route('/removeUserItem/:cardKey')
+    .delete(function(req, res) {
+    //selects the comment by its ID, then removes it.
+        WishlistItem.remove({ _id: req.params.cardKey }, function(err, items) {
+            if (err)
+                res.send(err);
+            res.json({ message: 'Card has been deleted' })
         })
     });
 

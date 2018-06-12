@@ -6,6 +6,7 @@ import './assets/fonts/font-awesome-4.7.0/css/font-awesome.min.css';
 import Header from './js/components/shared/Header.js';
 import Footer from './js/components/shared/Footer.js';
 import Wishlist from './js/components/wishlist/Wishlist.js';
+import Signup from './js/components/signup/Signup.js';
 
 ReactDOM.render(
 	<div className="wishlist-container">

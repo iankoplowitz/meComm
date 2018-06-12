@@ -1,0 +1,7 @@
+.login-container {
+  padding: 300px 0 15px 0; }
+  .login-container .form-group {
+    padding-bottom: 15px; }
+  .login-container .form-check {
+    text-align: center;
+    padding-left: 0; }

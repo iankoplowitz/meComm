@@ -12,6 +12,7 @@ div[class^="col-lg-"] {
   padding-left: 0;
   padding-right: 0; }
 
+/*
 /* Navbar Styles */
 .navbar {
   background-color: #9ce6ff; }
@@ -67,6 +68,11 @@ div[class^="col-lg-"] {
 
 .modal .button:hover {
   background-color: #6ed9ff; }
+
+.modal .btn.btn-alert {
+  background-color: #dc3545;
+  border-color: #dc3545;
+  color: #fff; }
 
 .modal .form-row {
   padding: 15px; }
