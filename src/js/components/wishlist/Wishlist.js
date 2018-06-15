@@ -1,9 +1,11 @@
 import React from 'react';
+import '../../../css/wishlist.css';
 import WishlistCard from './WishlistCard.js';
 import Button from '../utils/Button.js';
 import axios from 'axios';
 import { Modal, ModalHeader, ModalBody, ModalFooter} from 'reactstrap';
 var apiEndpoint = 'http://192.168.1.183:3001/meComm';
+
 
 export default class Wishlist extends React.Component{
 	constructor(props){

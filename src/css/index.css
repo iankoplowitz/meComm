@@ -14,100 +14,17 @@ div[class^="col-lg-"] {
 
 /*
 /* Navbar Styles */
-.navbar {
-  background-color: #9ce6ff; }
+.navbar-container .navbar {
+  background-color: #9a09cf;
+  padding: 30px; }
 
 /* Footer Styles */
 .footer {
-  padding: 15px 0;
+  padding: 50px;
   color: #fff;
-  background-color: #9ce6ff;
-  position: absolute;
-  bottom: 0;
-  left: 0;
+  background-color: #9a09cf;
   width: 100%; }
-
-/* Wishlist styles */
-.wishlist-container {
-  width: 100%; }
-  .wishlist-container .wishlist {
-    padding: 25px 0; }
-  .wishlist-container .card {
-    line-height: 200px;
-    font-size: 24px; }
-  .wishlist-container .card:hover {
-    cursor: pointer; }
-  .wishlist-container .wishlist-card {
-    line-height: 200px; }
-    .wishlist-container .wishlist-card .fa-4 {
-      font-size: 7em; }
-  .wishlist-container .new-wishlist-card {
-    border: 0;
-    color: #9ce6ff; }
-    .wishlist-container .new-wishlist-card .btn-primary {
-      color: #9ce6ff;
-      border: 0;
-      background-color: transparent;
-      cursor: pointer; }
-    .wishlist-container .new-wishlist-card .btn-primary:active {
-      background-color: transparent;
-      color: #6ed9ff;
-      border: 0;
-      box-shadow: none; }
-  .wishlist-container .wishlist-card-column {
-    padding: 10px;
-    text-align: center; }
-
-.modal .button {
-  color: #fff;
-  background-color: #9ce6ff;
-  padding: 10px 15px;
-  border-radius: 3px;
-  cursor: pointer;
-  width: fit-content; }
-
-.modal .button:hover {
-  background-color: #6ed9ff; }
-
-.modal .btn-alert {
-  background-color: #dc3545;
-  border-color: #dc3545;
-  color: #fff; }
-
-.modal .btn-alert:hover {
-  background-color: #dc4545;
-  border-color: #dc4545; }
-
-.modal .form-row {
-  padding: 15px; }
-  .modal .form-row input {
-    width: 100%;
-    border: 0;
-    border-bottom: 2px solid #9ce6ff;
-    height: 60px;
-    padding: 15px 0;
-    font-size: 24px; }
-  .modal .form-row input:focus {
-    outline: none;
-    border-bottom: 2px solid #6ed9ff; }
-
-.modal .form-submit-container {
-  text-align: center;
-  padding: 15px;
-  padding-top: 0; }
-  .modal .form-submit-container .button {
-    margin: 0 auto; }
-
-.fade.in {
-  opacity: 1; }
-
-.modal.in .modal-dialog {
-  -webkit-transform: translate(0, 0);
-  -o-transform: translate(0, 0);
-  transform: translate(0, 0); }
-
-.modal-backdrop .fade .in {
-  opacity: 0.5 !important; }
-
-.modal-backdrop.fade {
-  opacity: 0.5 !important; }
+  .footer .social-links-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0; }

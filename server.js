@@ -4,6 +4,7 @@
 var express = require('express');
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
+var mysql = require('mysql');
 var WishlistItem = require('./src/js/components/model/WishlistItem.js');
 //and create our instances
 var app = express();
@@ -75,8 +76,39 @@ router.route('/removeUserItem/:cardKey')
         })
     });
 
+router.route('/users')
+    .post(function(req, res) {
+        
+        var connection = mysql.createConnection({
+            host     : "mecomm-mysql.cx0pkixxxjt6.us-east-1.rds.amazonaws.com",
+            user     : "mecommroot",
+            password : "mecommroot",
+            port     : 3306
+        });
+        
+        var firstName = req.body.firstName, 
+            lastName = req.body.lastName, 
+            email = req.body.email, 
+            password = req.body.password;
+        
+        var query = "insert into mecommdev.users (`first_name`, `last_name`, `email`, `password`) VALUES ('" + firstName + "', '" + lastName + "', '" + email + "', '" + password + "')";
+    
+        connection.query(query, function(err, result) {
+            if (err) {
+                console.error('Failed to insert record: ' + err.stack);
+                return; 
+            }
+            console.log("Record inserted");
+        });
+        connection.end();
+        res.end();
+    }); 
+
 app.use('/meComm', router);
 //starts the server and listens for requests
 app.listen(port, function() {
     console.log(`api running on port ${port}`);
 });
+
+
+

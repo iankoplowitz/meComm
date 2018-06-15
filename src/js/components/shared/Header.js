@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  Collapse,
-  Navbar,
-  NavbarToggler,
-  NavbarBrand,
-  Nav,
-  NavItem,
-  NavLink} from 'reactstrap';
+import {Navbar, NavbarBrand} from 'reactstrap';
 export default class Header extends React.Component{
 	constructor(props) {
 	    super(props);
@@ -24,20 +17,11 @@ export default class Header extends React.Component{
 	  }
 	render(){
 		return (
-			<div>
+			<div className="navbar-container">
 	        	<Navbar color="faded" light>
-	          		<NavbarBrand href="/" className="mr-auto">MeCommerce</NavbarBrand>
-	          		<NavbarToggler onClick={this.toggleNavbar} className="mr-2" />
-	          		<Collapse isOpen={!this.state.collapsed} navbar>
-	            		<Nav navbar>
-	              			<NavItem>
-	                			<NavLink href="/components/">Components</NavLink>
-	              			</NavItem>
-	              			<NavItem>
-	                			<NavLink href="https://github.com/reactstrap/reactstrap">Github</NavLink>
-	              			</NavItem>
-	            		</Nav>
-	          		</Collapse>
+	          		<NavbarBrand href="/" className="mr-auto">meComm</NavbarBrand>
+	          		
+	          		
 	        	</Navbar>
 	      	</div>
 		);
